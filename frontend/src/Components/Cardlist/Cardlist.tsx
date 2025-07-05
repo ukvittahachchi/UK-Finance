@@ -3,6 +3,8 @@ import Card from '../Card/Card';
 import { JSX } from 'react/jsx-runtime';
 import { CompanySearch } from '../../company';
 import {v4 as uuidv4} from 'uuid';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 
 
 interface Props {
