@@ -18,9 +18,19 @@ function App() {
 
   const onPortfolioCreate = (e: any) => {
     e.preventDefault();  
+    const exists = portfoliovalue.find((value) => value === e.target[0].value);
+    if (exists) return;
     const updatedPortfolio = [...portfoliovalue, e.target[0].value];
     setPortfolioValue(updatedPortfolio);
   };
+
+  const onPortfolioDelete = (e: any) => {
+    e.preventDefault();
+    const removed = portfoliovalue.filter((value) =>{
+      return value !== e.target[0].value;
+    });
+    setPortfolioValue(removed);
+  }
 
   const onSearchSubmit: (e: SyntheticEvent) => Promise<void> = async (e) => {
     e.preventDefault();
@@ -39,9 +49,19 @@ function App() {
 
   return (
     <div className="App">
-      <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange} />
-      <ListPortfolio portfolioValues={portfoliovalue}/>
-      <Cardlist searchResult={searchResult} onPortfolioCreate={onPortfolioCreate}/>
+      <Search 
+      onSearchSubmit={onSearchSubmit} 
+      search={search} 
+      handleSearchChange={handleSearchChange} 
+      />
+      <ListPortfolio 
+      portfolioValues={portfoliovalue} 
+      onPortfolioDelete={onPortfolioDelete} 
+      />
+      <Cardlist 
+      searchResult={searchResult} 
+      onPortfolioCreate={onPortfolioCreate}
+      />
       {serverError && <div>Unable to connect to API: {serverError}</div>}
     </div>
   );
