@@ -20,17 +20,19 @@ A full-stack URL Shortener web application where users can shorten long URLs, vi
 
 URL-Shortener-App/
 ├── backend/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ ├── controllers/
-│ └── server.js
+│   ├── models/              # Mongoose schemas (URL, User, etc.)
+│   ├── routes/              # Express routes (auth, url, etc.)
+│   ├── middleware/          # JWT auth middleware, error handlers
+│   ├── controllers/         # Route logic handling
+│   └── server.js            # Entry point of backend server
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ └── App.jsx
-└── README.md
+│   ├── src/
+│   │   ├── components/      # React components (forms, navbar, etc.)
+│   │   ├── pages/           # Page components (Home, Login, Dashboard)
+│   │   └── App.jsx          # Main React component
+├── .env                     # Environment variables (in backend folder)
+├── README.md                # Project documentation
+
 
 
 ## 🚀 Features
