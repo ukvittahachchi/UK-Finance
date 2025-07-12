@@ -60,7 +60,3 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 
 
-
----
-
-Let me know if you'd like it tailored more specifically to your implementation (e.g., including Docker setup, specific API routes, or usage instructions).
