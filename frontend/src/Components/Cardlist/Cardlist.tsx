@@ -6,7 +6,6 @@ import {v4 as uuidv4} from 'uuid';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 
-
 interface Props {
   searchResult: CompanySearch[];
   onPortfolioCreate:(e: SyntheticEvent) => void;
@@ -27,9 +26,9 @@ const Cardlist: React.FC<Props> = (props: Props): JSX.Element => {
           />;
         })
       ) : (
-        <div>
-          <h2>No results found</h2>
-        </div>
+        <p className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+          No results!
+        </p>
       )}
     </>
   );
