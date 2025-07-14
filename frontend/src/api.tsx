@@ -33,4 +33,4 @@ export const getCompanyProfile = async (query: string) => {
   } catch (error: any) {
     console.log("error message: ", error.message);
   }
-};
+}; 

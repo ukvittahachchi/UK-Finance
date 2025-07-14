@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["react-icons/fa"],
     "target": "es5",
     "lib": [
       "dom",
