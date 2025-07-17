@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { CompanyProfile } from "../../company";
 import { useParams } from "react-router-dom";
 import { getCompanyProfile } from "../../api";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Tile from "../../Components/Tile/Tile";
-import Sidebar from "../../Components/Sildbar/Slidebar";
 
 interface Props {}
 
@@ -19,7 +19,7 @@ const CompanyPage = (props: Props) => {
       setCompany(result?.data[0]);
     };
     getProfileInit();
-  }, []);
+  }, [ticker]); // Added ticker as a dependency
 
   return (
     <>

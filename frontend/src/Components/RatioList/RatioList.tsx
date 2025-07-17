@@ -1,5 +1,6 @@
 import React from "react";
 
+
 type Props = {
   config: any;
   data: any;

@@ -5,6 +5,8 @@ import { getKeyMetrics } from "../../api";
 import RatioList from "../RatioList/RatioList";
 import Tile from "../Tile/Tile";
 
+type Props = {};
+
 const tableConfig = [
   {
     label: "Market Cap",
@@ -32,7 +34,7 @@ const tableConfig = [
   },
 ];
 
-const CompanyProfile = () => {
+const CompanyProfile = (props: Props) => {
   const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
@@ -41,7 +43,7 @@ const CompanyProfile = () => {
       setCompanyData(value?.data[0]);
     };
     getCompanyKeyRatios();
-  }, [ticker]);
+  }, []);
   return (
     <>
       {companyData ? (
