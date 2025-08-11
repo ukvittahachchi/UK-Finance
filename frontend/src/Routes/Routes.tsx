@@ -5,8 +5,8 @@ import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
 import CompanyPage from "../Pages/ComapanyPage/CompanyPage";
 import IncomeStatement from "../Components/IncomeStatement.tsx/IncomeStatement";
-import DesignPage from "../Pages/DesignPage/DesignPage";
-
+import BalanceSheet from "../Components/BalanceSheet/BalanceSheet";
+import DesignGuide from "../Pages/DesignPage/DesignPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,13 +15,14 @@ export const router = createBrowserRouter([
     children: [
       { path: "", element: <HomePage /> },
       { path: "search", element: <SearchPage /> },
-      { path: "Design_guide", element: <DesignPage /> },
+      { path: "design-guide", element: <DesignGuide /> },
       {
         path: "company/:ticker",
         element: <CompanyPage />,
         children: [
           { path: "company-profile", element: <CompanyProfile /> },
           { path: "income-statement", element: <IncomeStatement /> },
+          { path: "balance-sheet", element: <BalanceSheet /> },
         ],
       },
     ],

@@ -19,7 +19,7 @@ const CompanyPage = (props: Props) => {
       setCompany(result?.data[0]);
     };
     getProfileInit();
-  }, [ticker]); // Added ticker as a dependency
+  }, []);
 
   return (
     <>
@@ -28,6 +28,9 @@ const CompanyPage = (props: Props) => {
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
+            <Tile title="Price" subTitle={company.price.toString()} />
+            <Tile title="Sector" subTitle={company.sector} />
+            <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
           </CompanyDashboard>
         </div>
       ) : (
